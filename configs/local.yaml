@@ -1,0 +1,7 @@
+storage_path: "./storage/storage.db"
+log_level: "local"
+http_server:
+  addr: "localhost:8080"
+  read_timeout: 10
+  write_timeout: 10
+  
