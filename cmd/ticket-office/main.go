@@ -6,4 +6,6 @@ import (
 
 func main() {
 	cfg := config.MustLoad()
+
+	_ = cfg
 }
