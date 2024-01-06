@@ -4,6 +4,7 @@ import (
 	"github.com/ilyakaznacheev/cleanenv"
 	"log"
 	"os"
+	"time"
 )
 
 type Config struct {
@@ -13,9 +14,9 @@ type Config struct {
 }
 
 type HttpServer struct {
-	Addr         string `yaml:"addr" env-default:"localhost:8080"`
-	ReadTimeout  string `yaml:"read_timeout" env-default:"10"`
-	WriteTimeout string `yaml:"write_timeout" env-default:"10"`
+	Addr         string        `yaml:"addr" env-default:"localhost:8080"`
+	ReadTimeout  time.Duration `yaml:"read_timeout" env-default:"10s"`
+	WriteTimeout time.Duration `yaml:"write_timeout" env-default:"10s"`
 }
 
 func MustLoad() *Config {
